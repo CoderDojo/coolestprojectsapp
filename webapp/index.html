@@ -23,6 +23,8 @@
     <!-- Include the compiled Ratchet JS -->
     <script src="js/ratchet.js"></script>
 
+    <!-- Include phonegap -->
+    <script src="phonegap.js"></script>
 </head>
 
 <body>
@@ -37,13 +39,19 @@
         <form>
             <p>Already have an account?</p>
             <div class="input-group">
-                <input autocorrect="off" autocapitalize="off" name="email" placeholder="Email" type="email">
-                <input autocorrect="off" autocapitalize="off" name="pass" placeholder="Password" type="password">
+                <input name="email" placeholder="Email" type="email">
+                <input name="pass" placeholder="Password" type="password">
             </div>
             <div>
-                <a class="button-positive button-block" type="submit" value="Log In" name="login" role="button">Log In</a>
+                <a href="home.html" data-transition="fade" class="button-positive button-block" type="submit" value="Log In" name="login" role="button">
+                    Log In
+                </a>
+                
                 <p>New to CoolestProjects?</p>
-                <a href="#" class="button-main button-block" role="button">Create New Account</a>
+                
+                <a href="register.html" data-transition="fade" class="button-main button-block" role="button">
+                    Create New Account
+                </a>
             </div>
         </form>
     </div>

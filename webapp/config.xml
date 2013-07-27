@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "org.coolestprojects.mobileapp"
+        version     = "1.0.0"
+        versionCode = "100">
+    <name>CoolestProjects</name>
+
+    <description>
+      Mobile Application for the CoolestProjects 2013
+    </description>
+
+    <author href="http://coolestprojects.org/" email="coolestprojects@coderdojodcu.com">
+      CoolestProjects.Org
+    </author>
+   
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version"           value="2.9.0" />
+    <preference name="orientation"                value="portrait" />
+    <preference name="target-device"              value="universal" />
+    <preference name="fullscreen"                 value="false" />
+    <preference name="webviewbounce"              value="false" />
+    <preference name="prerendered-icon"           value="true" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="android-minSdkVersion"      value="5" />
+    <preference name="permissions"                value="none"/>
+    <preference name="load-url-timeout"           value="10000" />
+</widget>
