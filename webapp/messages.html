@@ -22,6 +22,24 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="js/ratchet.js"></script>
+    
+    <style>
+    	.errorBox {
+    		display:block; 
+    		text-align:center;
+    	}
+    	.error {
+    		color:red;
+    		display:none;
+			padding: 11px 10px 13px;
+			font-size: 16px;
+			line-height: 40px;
+    	}
+    </style>
+
+    <!-- Include phonegap -->
+    <script src="phonegap.js"></script>
+
 </head>
 
 <body>
@@ -40,13 +58,33 @@
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content content-padded">
 		<form name="chat" action="#" method="post">
+    <div class="content" content-padded">
+		<form name="chat" action="#" method="get">
 		  <textarea rows="5" placeholder="Type Message..." name="message"></textarea>
+		  <div class="errorBox">
+		  	<span class="error"> Please enter some text</span>
+		  </div>
 		  <a class="button button-block" type="submit" id="submit">Send Message</a>
 		</form>
 		<ul class="list inset" id="chatMesg">
 		  <li>No Recent Messages</li>
 		</ul>
     </div>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$('#submit').click(function(){
+		validateForm()
+	});
+	function validateForm(){
+		$('.error').css("display", "none");
+		if($('textarea[name="message"]').val() === ""){
+			$('.error').fadeIn('slow');
+			return;
+		}
+		$('chat').submit();
+	}
+    </script>
 </body>
 
 </html>
