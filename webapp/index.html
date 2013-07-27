@@ -22,9 +22,6 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="js/ratchet.js"></script>
-
-    <!-- Include phonegap -->
-    <script src="phonegap.js"></script>
 </head>
 
 <body>
@@ -54,7 +51,12 @@
                 </a>
             </div>
         </form>
-    </div>
+      <script src="cordova.js"></script>
+      <script>
+        document.addEventListener("deviceready", loadApp, true);
+        function loadApp() {
+          navigator.splashscreen.hide();
+        }
+      </script>
 </body>
-
 </html>
