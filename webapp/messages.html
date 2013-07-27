@@ -56,6 +56,8 @@
     </header>
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content content-padded">
+		<form name="chat" action="#" method="post">
     <div class="content" content-padded">
 		<form name="chat" action="#" method="get">
 		  <textarea rows="5" placeholder="Type Message..." name="message"></textarea>
@@ -72,7 +74,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
 	$('#submit').click(function(){
-		validateForm();
+		validateForm()
 	});
 	function validateForm(){
 		$('.error').css("display", "none");
