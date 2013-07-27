@@ -40,7 +40,13 @@
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content content-padded">
-
+		<form name="chat" action="#" method="post">
+		  <textarea rows="5" placeholder="Type Message..." name="message"></textarea>
+		  <a class="button button-block" type="submit" id="submit">Send Message</a>
+		</form>
+		<ul class="list inset" id="chatMesg">
+		  <li>No Recent Messages</li>
+		</ul>
     </div>
 </body>
 
