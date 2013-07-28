@@ -20,12 +20,16 @@ read CPB_SQL_NAME
 # Create runscript and load all the env variables
 cat > runDevScript.sh <<DELIM
 #!/bin/bash
-MYSQL_HOST = $CPB_SQL_HOST
-MYSQL_USER = $CPB_SQL_USER
-MYSQL_PASS = $CPB_SQL_PASS
-MYSQL_NAME = $CPB_SQL_NAME
+MYSQL_HOST=$CPB_SQL_HOST
+MYSQL_USER=$CPB_SQL_USER
+MYSQL_PASS=$CPB_SQL_PASS
+MYSQL_NAME=$CPB_SQL_NAME
+export MYSQL_HOST MYSQL_USER MYSQL_PASS MYSQL_NAME
 node app.js
 DELIM
+
+# Set execute on runDevScript.sh
+chmod +x runDevScript.sh
 
 # YAY!
 echo <<DELIM
