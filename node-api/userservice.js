@@ -9,10 +9,10 @@ var express = require('express')
 var app = express();
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : '',
-  database : '',
-  user     : '',
-  password : '',
+  host     : process.env['DB_HOST'],
+  database : process.env['DB_NAME'],
+  user     : process.env['DB_USERNAME'],
+  password : process.env['DB_PASSWORD'],
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -24,10 +24,10 @@ app.set('views', __dirname + '');
 app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(express.logger(process.env['EXPRESS_LOG']));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser(process.env['COOKIE_SECRET']));
 app.use(express.session());
 app.use(app.router);
 
@@ -41,12 +41,15 @@ app.get('/user/login', function(req, res){
   var username = req.query.username;
   var password = req.query.password;
 
+  console.log("######### "+process.env['MYNAME']);
+
   var obj = { result: true, message: "successful login" };
   res.jsonp(200,obj);
 });
 
 app.post('/user/register', function(req, res) {
 	console.log("################ " + req.body.email);
+	
     var email = req.body.email;
     var password = req.body.password;
     var coderdojo = req.body.coderdojo;
