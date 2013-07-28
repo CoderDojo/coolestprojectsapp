@@ -1,9 +1,9 @@
 ## Coolest Projects API Details
 
 ### Node install
+Run 
 
 ````bash
-npm install
-npm install consolidate
-npm install mysql@2.0.0-alpha8
+./bootstrap.sh
 ```` 
+And everything will be fine, except if you are running on windows.
