@@ -57,10 +57,11 @@ app.post('/user/register', function(req, res) {
     var passedPassword = validateValue('password', password, res);
     var passedName = validateValue('name', name, res);
 
+	var hashPassword = hash(password);
+
 	if(passedEmail && passedPassword && passedName) {
     	connection.connect();
-    
-    	var query = connection.query('INSERT INTO USERS SET EMAIL=?, PASSWORD=?, NAME=?', [email, password, name], function(err, result) {
+    	var query = connection.query('INSERT INTO USERS SET EMAIL=?, PASSWORD=?, NAME=?', [email, hashPassword, name], function(err, result) {
   			if (err) {
   				console.log(err);
   				var obj = { result: false, message: "registration failed" };
@@ -71,7 +72,7 @@ app.post('/user/register', function(req, res) {
   			}
 		});
 		connection.end();
-	}
+	} 
 });
 
 function validateEmail(field, email, res) {
@@ -87,6 +88,21 @@ function validateValue(field, value, res) {
 		var obj = { result: false, message: "You need to enter a valid "+field+" value" };
     	res.jsonp(500,obj);
 	}
+	return true;
+}
+
+function hash(value) {
+	console.log("hash " + value);
+	var crypto = require('crypto');
+	var hash = crypto.createHash('md5').update(value).digest("hex");
+	console.log("returned-hash " + hash);
+	return hash;
+}
+
+function hashSessionKey(emailAddr) {
+	var curTime = new Date().getTime();
+	var random =  Math.random(); 
+	hash(curTime+random+emailAddr);
 }
 
 app.listen(process.env.PORT || 3000) 
