@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "3.x",
 	"Accessor": "0.2.x",
-	"Accessor_MySQL": "0.4.1"
+	"Accessor_MySQL": "0.4.1",
+	"socket.io": "0.9.16"
   },
   "bundledDependencies": [
 	  "user",

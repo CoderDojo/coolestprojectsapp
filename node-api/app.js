@@ -15,3 +15,9 @@ app.use(user)
 
 app.listen(process.env.PORT || 3000)
 console.log("Listening on port "+(process.env.PORT || 3000))
+
+var io = require('socket.io').listen(3001);
+
+io.sockets.on('connection', function (socket) {
+  console.log("Client connectioned with socket: "+socket.id);
+});
