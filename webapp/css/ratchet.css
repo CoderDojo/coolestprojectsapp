@@ -126,7 +126,7 @@ a {
   bottom: 0;
   left: 0;
   overflow: auto;
-  background: #fff;
+  background-color: #fff;
   -webkit-transition-property: top, bottom;
           transition-property: top, bottom;
   -webkit-transition-duration: .2s, .2s;  
@@ -632,12 +632,13 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="color"],
+input[type="submit"],
 .input-group {
   width: 100%;
   height: 40px;
   padding: 10px;
   margin-bottom: 10px;
-  background: #fff;
+  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
@@ -750,7 +751,7 @@ select {
   padding-top: 5px;
   padding-bottom: 3px;
   color: #333;
-  background-color: #ccc;
+  background-color: #fff;
   background-image: none;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
 }
@@ -966,7 +967,7 @@ select {
 
 /* Active segment of controller */
 .segmented-controller li.active {
-  background-color: #ccc;
+  background-color: #fff;
   box-shadow: inset 0 1px 5px rgba(0, 0, 0, .3);
 }
 
@@ -1171,7 +1172,7 @@ select {
   position: relative;
   width: 75px;
   height: 28px;
-  background-color: #eee;
+  background-color: #fff;
   border: 1px solid #bbb;
   border-radius: 20px;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, .1);
@@ -1257,4 +1258,11 @@ select {
 .content.slide.right {
   -webkit-transform: translate3d(100%, 0, 0);
           transform: translate3d(100%, 0, 0);
+}
+
+.imgcenter {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
