@@ -1,0 +1,32 @@
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar-title">
+    <h1 class="title">Register</h1>
+</header>
+
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content content-padded">
+    <form>
+        <div class="input">
+            <input id="email" name="email" placeholder="Email" type="email" required>
+            <input id="password" name="password" placeholder="Password" type="password" required>
+            <input id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password" oninput="check(this)" required>
+            <input id="coderdojo" name="coderdojo" placeholder="Coderdojo that you're from" type="text">
+        </div>
+        <div>
+            <input type="submit" value="Create New Account" class="button-main button-block" role="button">
+        </div>
+    </form>
+</div>
+
+<script>
+function check(input) {
+console.log(input.value);
+console.log($('password').value);
+  if (input.value != document.getElementById('password').value) {
+    input.setCustomValidity('The two passwords must match.');
+  } else {
+    // input is valid -- reset the error message
+    input.setCustomValidity('');
+  }
+}
+</script>
