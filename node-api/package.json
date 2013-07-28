@@ -4,9 +4,12 @@
   "version": "0.0.1-dev",
   "private": true,
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+	"Accessor": "0.2.x",
+	"Accessor_MySQL": "0.4.1"
   },
   "bundledDependencies": [
-	  "user"
+	  "user",
+	  "responses"
   ]
 }

@@ -1,5 +1,12 @@
 var express = require('express')
 var app = express()
+app.use(express.bodyParser());
+
+// SEE: https://github.com/bu/Accessor_MySQL for DB instructions
+var Accessor = require("Accessor")
+db = {
+	user: Accessor("users", "MySQL")
+}
 
 var user = require('./lib/user')
 var responses = require('./lib/responses')
